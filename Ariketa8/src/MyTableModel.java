@@ -37,15 +37,15 @@ public class MyTableModel extends AbstractTableModel {
 		}
 		public Object getBalioa(int i) {
 			try{
-				if (i==0){
+				if (i==1){
 					return this.izena;
-				}else if(i==1){
-					return this.abizena;
 				}else if(i==2){
-					return this.kirola;
+					return this.abizena;
 				}else if(i==3){
-					return this.tamaina;
+					return this.kirola;
 				}else if(i==4){
+					return this.tamaina;
+				}else if(i==5){
 					return this.baiez; 
 				}
 			}catch(NumberFormatException e){
@@ -55,15 +55,15 @@ public class MyTableModel extends AbstractTableModel {
 		}
 		
 		public void insertElementAt(Object value, int i){
-			if (i==0){
+			if (i==1){
 				this.izena=(String)value;
-			}else if(i==1){
-				this.abizena=(String)value;
 			}else if(i==2){
-				this.kirola=(String)value;
+				this.abizena=(String)value;
 			}else if(i==3){
+				this.kirola=(String)value;
+			}else if(i==4){
 				this.tamaina=(int)value;
-			}else if(i==4 ){
+			}else if(i==5){
 				this.baiez=(boolean)value; 
 			}
 		}
@@ -91,15 +91,15 @@ public class MyTableModel extends AbstractTableModel {
 		return data.get(row).getBalioa(col);
 	}
 	public Class getColumnClass(int c){
-		if (c==0){
-			return String.class;
-		}else if(c==1){
+		if (c==1){
 			return String.class;
 		}else if(c==2){
 			return String.class;
 		}else if(c==3){
-			return Integer.class;
+			return String.class;
 		}else if(c==4){
+			return Integer.class;
+		}else if(c==5){
 			return Boolean.class; 
 		}else {
 			return null;
